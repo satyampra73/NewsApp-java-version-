@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
                 News newsResponse=response.body();
-                Log.d("newsres","newsResponse :"+newsResponse.toString());
                 recyclerView.setAdapter(new NewsAdapter(newsResponse.articles, MainActivity.this));
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
