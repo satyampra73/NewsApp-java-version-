@@ -15,6 +15,9 @@ public class Articles {
         this.url = url;
     }
 
+    public Articles() {
+    }
+
     @Override
     public String toString() {
         return "Articles{" +

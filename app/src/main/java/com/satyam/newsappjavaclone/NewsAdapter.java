@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -36,16 +35,6 @@ holder.title_text.setText(list.get(position).getTitle());
 holder.descText.setText(list.get(position).getDescription());
         Glide.with(context).load(list.get(position).urlToImage).into(holder.imageview);
 
-//        holder.itemView.setOnClickListener {
-//            val intent= Intent(context,ArticleActivity::class.java)
-//            intent.putExtra("image",list[position].urlToImage)
-//            intent.putExtra("title",list[position].title)
-//            intent.putExtra("author",list[position].author)
-//            intent.putExtra("description",list[position].description)
-//            intent.putExtra("url",list[position].url)
-//            //can do above lines val bundle= bundleOf("image" to list[position].urlToImage,"title" to list[position].title,-----)
-//            //intent.extras?.putAll(bundle)
-//            context.startActivity(intent)
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

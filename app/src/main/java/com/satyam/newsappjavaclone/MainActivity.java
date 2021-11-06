@@ -1,11 +1,17 @@
 package com.satyam.newsappjavaclone;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -24,20 +30,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView=findViewById(R.id.recyclerview);
+        recyclerView = findViewById(R.id.recyclerview);
         getnews();
     }
 
     private void getnews() {
-        Retrofit retrofit=new Retrofit.Builder().baseUrl(Constants.BaseUrl)
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(Constants.BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         NewsInterface newsInstance = retrofit.create(NewsInterface.class);
-        Call<News> news=newsInstance.fetchHeadlines("in",Constants.API_KEY);
+        Call<News> news = newsInstance.fetchHeadlines("in", Constants.API_KEY);
         news.enqueue(new Callback<News>() {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
-                News newsResponse=response.body();
+                News newsResponse = response.body();
                 recyclerView.setAdapter(new NewsAdapter(newsResponse.articles, MainActivity.this));
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
@@ -50,5 +56,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.us_news:
+                Intent intent = new Intent(MainActivity.this, USNews.class);
+                startActivity(intent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
