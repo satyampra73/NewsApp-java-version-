@@ -43,7 +43,9 @@ public class activity_artical extends AppCompatActivity {
         readMoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+//                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                Intent intent=new Intent(activity_artical.this,WebViewData.class);
+                intent.putExtra("view",url);
                 startActivity(intent);
 
             }
