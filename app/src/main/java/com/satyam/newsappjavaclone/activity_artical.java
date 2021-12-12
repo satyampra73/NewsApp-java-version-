@@ -28,6 +28,7 @@ public class activity_artical extends AppCompatActivity {
         String author = getIntent().getStringExtra("author");
         String description = getIntent().getStringExtra("description");
         String url = getIntent().getStringExtra("url");
+        setTitle("News Article");
 
         articleImage = findViewById(R.id.image);
         articleTitle = findViewById(R.id.title);

@@ -20,6 +20,7 @@ RecyclerView recyclerView2;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usnews);
         recyclerView2=findViewById(R.id.recyclerview2);
+        setTitle("News(US)");
         getnews();
 
     }

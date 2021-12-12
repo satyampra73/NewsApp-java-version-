@@ -14,7 +14,6 @@
         <activity
             android:name=".WebViewData"
             android:exported="false" />
-        <activity android:name=".DetailActivity" />
         <activity android:name=".USNews" />
         <activity android:name=".activity_artical" />
         <activity android:name=".MainActivity"></activity>
