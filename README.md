@@ -23,7 +23,7 @@ The Api Integration is done with help of **Retrofit library** in this project.
   <img width="350" height="700" src="https://user-images.githubusercontent.com/85444852/145837905-65fa18a6-1e03-441c-adf9-7fa199219653.jpg">
 </p>
 
-
+* After clicking on the READ MORE button,the name of the activity whre the user reaches is named as **News Detail** .In this activity user can read the full news article in detail without leaving the application
 
 <p align="center">
   <img width="350" height="700" src="https://user-images.githubusercontent.com/85444852/145837926-4a2f8d65-b218-4c52-9746-2998a71deb1b.jpg">
