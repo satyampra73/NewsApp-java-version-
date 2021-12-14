@@ -1,6 +1,7 @@
 # NewsApp-java-version-
 Newsapp is an Android application which provides simple easily manageable user interface where a user can easile get the latest news on dailybasis.
 user can read the news not only from indian news publishers he also can read the news from USA news publishers and can read the full news article without leaving the applictaion.
+The Api Integration is done with help of **Retrofit library** in this project.
 
 ## Project Working
 * In the First User Interface user can see the **News(India)** activity.In this activity user can see the quick view of the news comes from Indian publishers.in this interface user will see Image of the news,Title of the News and short description of the news.On the top-right corner user can see the menu option this will help the user to move from this activity to second activity. 
